@@ -1,0 +1,17 @@
+{
+  "name": "album_api",
+  "version": "1.0.0",
+  "description": "Express API for Alblum management",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "~4.16.1",
+    "mongoose": "~8.9.6"
+  },
+  "author": "Amir ANCIAUX",
+  "license": "ISC"
+}

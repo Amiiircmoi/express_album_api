@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "5b62f588-8aa7-4413-ae8f-5094d7078b0b",
+		"name": "Express Album API tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31540586"
+	},
+	"item": [
+		{
+			"name": "Create Album",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Mon Album\",\n  \"description\": \"Un super album\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/album",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"album"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Album",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/album/67a22499dec9923e2a9a692a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"album",
+						"67a22499dec9923e2a9a692a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create 2nd Album",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Mon deuxième Album\",\n  \"description\": \"Tout aussi bien que le précédent\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/album",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"album"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update 2nd Album",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"description\": \"Moins bien en fait\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/album/67a22642dec9923e2a9a6932",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"album",
+						"67a22642dec9923e2a9a6932"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all albums",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/albums",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"albums"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete 2nd Album",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/album/67a22642dec9923e2a9a6932",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"album",
+						"67a22642dec9923e2a9a6932"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Photo to 1st Album",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Première photo\",\n  \"url\": \"https://mon-url-photo.jpg\",\n  \"description\": \"Photo test\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/album/67a22499dec9923e2a9a692a/photo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"album",
+						"67a22499dec9923e2a9a692a",
+						"photo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all 1st Album photos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/album/67a22499dec9923e2a9a692a/photos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"album",
+						"67a22499dec9923e2a9a692a",
+						"photos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get 1st Album 1st Photo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/album/67a22499dec9923e2a9a692a/photo/67a2256cdec9923e2a9a692d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"album",
+						"67a22499dec9923e2a9a692a",
+						"photo",
+						"67a2256cdec9923e2a9a692d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add 2nd Photo to 1st Album",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Seconde photo\",\n  \"url\": \"https://mon-url-photo2.jpg\",\n  \"description\": \"Photo test 2\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/album/67a22499dec9923e2a9a692a/photo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"album",
+						"67a22499dec9923e2a9a692a",
+						"photo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update 1st Album 2nd Photo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"url\": \"https://mon-url-photo-2.png\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/album/67a22499dec9923e2a9a692a/photo/67a2288cdec9923e2a9a693c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"album",
+						"67a22499dec9923e2a9a692a",
+						"photo",
+						"67a2288cdec9923e2a9a693c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete 1st Album 2nd Photo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"url\": \"https://mon-url-photo-2.png\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/album/67a22499dec9923e2a9a692a/photo/67a2288cdec9923e2a9a693c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"album",
+						"67a22499dec9923e2a9a692a",
+						"photo",
+						"67a2288cdec9923e2a9a693c"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
