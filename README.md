@@ -30,3 +30,7 @@ Pour se connecter, utilisez les identifiants suivants : admin / admin sur la rou
 
 ## Validation des données
 Un exemple de validation des données est fourni dans le fichier `src/middlewares/validation.js`. Il est mis en pratique sur la route de création d'album.
+
+## Rate Limiting
+
+Une limitation d'utilisation est mise en place pour éviter les abus. Si un utilisateur effectue plus de 100 requêtes en moins de 1 heure, il sera bloqué et un message lui sera affiché.

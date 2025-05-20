@@ -30,6 +30,24 @@ app.use(cors({
 // Middleware pour parser le JSON (au lieu de body-parser)
 app.use(express.json());
 
+const rateLimit = require('express-rate-limit');
+
+// Configure le rate limiter
+const limiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 heure en millisecondes
+  max: 100, // limite chaque IP à 100 requêtes par windowMs
+  standardHeaders: true, // renvoie RateLimit-* headers
+  legacyHeaders: false, // désactive les X-RateLimit-* headers
+  handler: (req, res) => { // callback quand on dépasse la limite
+    res.status(429).json({
+      error: 'Trop de requêtes — attends une heure avant de réessayer'
+    });
+  },
+});
+
+// Applique le limiter à toutes les routes de l’API
+app.use(limiter);
+
 // Connexion à la base de données en utilisant la variable d'environnement
 const mongoUri = process.env.MONGO_URI;
 mongoose.connect(mongoUri)
