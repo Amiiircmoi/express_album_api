@@ -64,6 +64,7 @@ mongoose.connect(mongoUri)
 const albumRoutes = require('./routes/albums');
 const photoRoutes = require('./routes/photos');
 const authRoutes = require("./routes/auth");
+const pipelineRoutes = require('./routes/pipeline');
 
 // Middleware d'authentification pour toutes les routes API
 const authenticateJWT = require('./middlewares/auth');
@@ -73,6 +74,7 @@ app.use('/api', authenticateJWT);
 app.use('/api', albumRoutes);
 app.use('/api', photoRoutes);
 app.use('/', authRoutes);
+app.use('/api', pipelineRoutes);
 
 // Démarrage du serveur
 // const PORT = process.env.PORT || 3000;
