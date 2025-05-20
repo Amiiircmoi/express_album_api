@@ -8,10 +8,24 @@ if (fs.existsSync('.env.local')) {
   dotenv.config();
 }
 
+const helmet = require('helmet');
+const cors = require('cors');
+
 const express = require('express');
 const mongoose = require('mongoose');
 
 const app = express();
+
+// Utilisation de helmet pour sécuriser les en-têtes HTTP
+app.use(helmet()); // Configuration par défaut de helmet
+
+// Utilisation de cors pour contrôler les requêtes cross-origin
+app.use(cors({
+  origin: '*', // Autorise pour l'instant toutes les origines
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Méthodes autorisées
+  allowedHeaders: ['Content-Type', 'Authorization'], // En-têtes autorisés
+  credentials: true // Autorise les cookies et les informations d'identification
+}));
 
 // Middleware pour parser le JSON (au lieu de body-parser)
 app.use(express.json());
