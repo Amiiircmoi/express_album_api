@@ -34,3 +34,7 @@ Un exemple de validation des données est fourni dans le fichier `src/middleware
 ## Rate Limiting
 
 Une limitation d'utilisation est mise en place pour éviter les abus. Si un utilisateur effectue plus de 100 requêtes en moins de 1 heure, il sera bloqué et un message lui sera affiché.
+
+## HTTPS
+
+L'API est configurée pour fonctionner en HTTPS. Pour cela il suffit d'utiliser le port 8080 au lieu du port 3000 et bien sûr d'utiliser https://localhost:8080 dans Postman ou tout autre client HTTP.

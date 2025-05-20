@@ -14,6 +14,12 @@ const cors = require('cors');
 const express = require('express');
 const mongoose = require('mongoose');
 
+const http = require('http');
+const https = require('https');
+var privateKey = fs.readFileSync('./selfsigned.key', 'utf8');
+var certificate = fs.readFileSync('./selfsigned.crt', 'utf8');
+var credentials = { key: privateKey, cert: certificate };
+
 const app = express();
 
 // Utilisation de helmet pour sécuriser les en-têtes HTTP
@@ -69,7 +75,14 @@ app.use('/api', photoRoutes);
 app.use('/', authRoutes);
 
 // Démarrage du serveur
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
+
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(credentials, app);
+
+httpServer.listen(3000);
+httpsServer.listen(8080);
+console.log('HTTP Server running on port 8080');
