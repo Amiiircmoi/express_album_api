@@ -27,3 +27,6 @@ Pensez à modifier les identifiants des requêtes pour correspondre à ceux de v
 ## Auth JWT
 L'API utilise le JWT pour l'authentification. Un token est généré lors de la connexion et doit être inclus dans les en-têtes des requêtes pour accéder aux routes protégées.
 Pour se connecter, utilisez les identifiants suivants : admin / admin sur la route `/login`.
+
+## Validation des données
+Un exemple de validation des données est fourni dans le fichier `src/middlewares/validation.js`. Il est mis en pratique sur la route de création d'album.

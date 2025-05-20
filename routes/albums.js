@@ -3,6 +3,8 @@ const router = express.Router();
 
 const Album = require('../models/album');
 
+const validateTitle = require('../middlewares/validation');
+
 /**
  * 1. GET /album/:id
  *    Récupérer un album par son ID.
@@ -24,7 +26,7 @@ router.get('/album/:id', async (req, res) => {
  * 2. POST /album
  *    Créer un nouvel album.
  */
-router.post('/album', async (req, res) => {
+router.post('/album', validateTitle, async (req, res) => {
     try {
         const { title, description } = req.body;
         if (!title) {
